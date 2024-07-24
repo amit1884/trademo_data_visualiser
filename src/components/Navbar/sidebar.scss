@@ -1,0 +1,119 @@
+@import "../../scss/variable";
+.sidebar {
+  background-color: $BG_SECONDARY;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 100vh;
+  box-shadow: 1px 1px 10px $BG_SECONDARY;
+  .sidebar-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    color: $WHITE;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    background-color: $BG_SECONDARY;
+    justify-content: flex-start;
+    img {
+      width: 40px;
+      margin-left: 10px;
+    }
+    .company-name {
+      font-size: 28px;
+      margin-left: 20px;
+    }
+  }
+  .top-menus {
+    margin-top: 100px;
+    padding: 20px;
+    border-bottom: 1px solid $TEXT_GRAY;
+    .menu-item {
+      padding: 15px 0;
+      color: $TEXT_GRAY;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 20px;
+      text-decoration: none;
+      &:hover {
+        cursor: pointer;
+        color: $WHITE;
+      }
+      .menu-label {
+        margin-left: 10px;
+        margin-top: 6px;
+      }
+    }
+  }
+  .bottom-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    position: relative;
+    .menu-item {
+      padding: 20px 0;
+      color: $TEXT_GRAY;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      font-size: 20px;
+      &:hover {
+        cursor: pointer;
+        color: $WHITE;
+      }
+      .menu-label {
+        margin-left: 10px;
+        margin-top: 6px;
+      }
+    }
+    .user-profile {
+      display: flex;
+      align-items: center;
+      background-color: purple;
+      color: $WHITE;
+      border-radius: 10px;
+      justify-content: flex-start;
+      padding: 2px 10px;
+      margin-top: 60px;
+      .user-image {
+        width: 40px;
+        height: 40px;
+        background-color: $BG_PRIMARY;
+        border-radius: 50%;
+      }
+      .user-data {
+        margin-top: 15px;
+        font-size: 12px;
+        margin-left: 10px;
+      }
+    }
+  }
+}
+.hamburger {
+  display: none;
+}
+@media (max-width: 991px) {
+  .sidebar {
+    transform: translateX(-250px);
+    transition: .3s;
+    z-index: 999;
+  }
+  .hamburger {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 9999;
+    font-size: 30px;
+    color: $WHITE;
+  }
+  .open {
+    transform: translateX(0) !important;
+  }
+}

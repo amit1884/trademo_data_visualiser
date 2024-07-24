@@ -1,0 +1,8 @@
+@import "../../scss/variable";
+.mycard{
+    position: relative;
+    background-color: $BG_SECONDARY;
+    padding:20px;
+    border-radius: 10px;
+    box-shadow: 1px 2px 10px $BG_PRIMARY;
+}

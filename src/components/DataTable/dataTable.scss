@@ -1,0 +1,25 @@
+@import "../../scss/variable";
+.rdt_Table {
+  background-color: transparent !important;
+  .rdt_TableRow {
+    background-color: transparent !important;
+    color: $TEXT_GRAY;
+  }
+  .rdt_TableHeader,
+  .rdt_TableFooter,
+  .rdt_TableHead,
+  .rdt_Pagination {
+    background-color: transparent !important;
+  }
+  .rdt_TableHeadRow {
+    font-size: 14px;
+    font-weight: 600;
+    color: $WHITE;
+    background-color: $BG_PRIMARY !important;
+    opacity: 0.9;
+  }
+}
+.rdt_Pagination {
+  background-color: transparent !important;
+  color:$WHITE !important;
+}
