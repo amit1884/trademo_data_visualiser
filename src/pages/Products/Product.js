@@ -1,7 +1,4 @@
-import React, { useState } from "react";
-import DoughnutChart from "../../components/DoughnutChart/Doughnut";
-import BarChart from "../../components/BarChart/BarChart";
-import "./products.scss";
+import React, { useState, lazy } from "react";
 import Card from "../../components/Card/Card";
 import CustomSelect from "../../components/CustomSelect/CustomSelect";
 import {
@@ -12,8 +9,14 @@ import {
   uniqueCategories,
   unitPriceBasedOnCategory,
 } from "./productUtility";
-import ProductsTable from "./ProductsTable";
-import LineChart from "../../components/LineChart/LineChart";
+
+import "./products.scss";
+const DoughnutChart = lazy(() =>
+  import("../../components/DoughnutChart/Doughnut")
+);
+const BarChart = lazy(() => import("../../components/BarChart/BarChart"));
+const LineChart = lazy(() => import("../../components/LineChart/LineChart"));
+const ProductsTable = lazy(() => import("./ProductsTable"));
 const categoryOption = uniqueCategories();
 
 function Product() {

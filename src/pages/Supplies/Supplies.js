@@ -1,17 +1,20 @@
-import React from "react";
-import DoughnutChart from "../../components/DoughnutChart/Doughnut";
-import BarChart from "../../components/BarChart/BarChart";
-import "./supplies.scss";
+import React, { lazy } from "react";
 import Card from "../../components/Card/Card";
 import { supplies } from "../../constants";
-
 import SupplyTable from "./SuppliesTable";
 import { generateColors } from "../../utils";
 import {
-    countries,
+  countries,
   generateSupplierColors,
   supplierCountsByCountry,
 } from "./suppliesUtils";
+import "./supplies.scss";
+
+const DoughnutChart = lazy(() =>
+  import("../../components/DoughnutChart/Doughnut")
+);
+const BarChart = lazy(() => import("../../components/BarChart/BarChart"));
+
 const supplierData = supplierCountsByCountry();
 const supplierColors = generateSupplierColors(countries.length);
 function Supplies() {
@@ -31,11 +34,13 @@ function Supplies() {
   };
   const barChartData = {
     labels: countries,
-    datasets: [{
-      label: "Number of Suppliers",
-      data: countries.map(country => supplierData[country]),
-      backgroundColor: supplierColors,
-    }],
+    datasets: [
+      {
+        label: "Number of Suppliers",
+        data: countries.map((country) => supplierData[country]),
+        backgroundColor: supplierColors,
+      },
+    ],
   };
   const options = {
     responsive: true,

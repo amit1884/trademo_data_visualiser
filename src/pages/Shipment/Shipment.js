@@ -1,15 +1,17 @@
-import React from "react";
-import "./shipment.scss";
-import ShipmentTable from "./ShipmentTable";
+import React, { lazy } from "react";
 import {
   shipmentQuantitiesByTransportMode,
   shipmentQuantitiesOverTime,
   transportModes,
 } from "./ShipmentUtil";
 import { generateColors } from "../../utils";
-import BarChart from "../../components/BarChart/BarChart";
 import Card from "../../components/Card/Card";
-import LineChart from "../../components/LineChart/LineChart";
+import "./shipment.scss";
+
+const BarChart = lazy(() => import("../../components/BarChart/BarChart"));
+const LineChart = lazy(() => import("../../components/LineChart/LineChart"));
+const ShipmentTable = lazy(() => import("./ShipmentTable"));
+
 const quantitiesByTransportMode = shipmentQuantitiesByTransportMode();
 const transportColors = generateColors(transportModes.length);
 
