@@ -14,7 +14,15 @@
    - SASS
 
 ## Page Load Time
-*Include page load time here if measured.*
+1. First Contentful Paint : 0.5s
+2. Largest Contentful Paint: 0.5s
+3. Total Blocking Time : 10ms
+4. Cumulative Layout Shift: 0
+5. Speed Index: 0.9s
+
+ **Page Load Time Screeshot**
+ ![App Screenshot](./src/assets/pageLoad.png)
+
 
 ## Performance Optimizations
 1. **Lazy Loading:** Implemented lazy loading to prevent unnecessary rendering/loading of components.
