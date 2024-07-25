@@ -17,6 +17,7 @@ import {
 import ProductsTable from "./ProductsTable";
 import LineChart from "../../components/LineChart/LineChart";
 const categoryOption = uniqueCategories();
+
 function Product() {
   const [selectedCategory, setSelectedCategory] = useState(categoryOption[0]);
   const products = productsBasedOnCategory(selectedCategory?.value);

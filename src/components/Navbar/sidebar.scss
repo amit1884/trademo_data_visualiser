@@ -101,7 +101,7 @@
 @media (max-width: 991px) {
   .sidebar {
     transform: translateX(-250px);
-    transition: .3s;
+    transition: 0.3s;
     z-index: 999;
   }
   .hamburger {
@@ -115,5 +115,39 @@
   }
   .open {
     transform: translateX(0) !important;
+  }
+}
+.customTopCard {
+  width: 95%;
+  margin: 20px;
+}
+.topBar {
+  padding: 20px;
+  width: 100%;
+  overflow-x: hidden;
+  display: flex;
+  color: $WHITE;
+  justify-content: space-between;
+  padding-right:40px;
+  height: auto;
+  .left-area{
+    font-size: 30px;
+  }
+  .right-area {
+    display: flex;
+    align-items: center;
+    .notification {
+      margin: 0 20px;
+    }
+    .user {
+      display: flex;
+      align-items: center;
+      .user-pic {
+        margin: 0 10px;
+      }
+      .user-name{
+        margin-top: 10px;
+      }
+    }
   }
 }

@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React from "react";
 import DoughnutChart from "../../components/DoughnutChart/Doughnut";
 import BarChart from "../../components/BarChart/BarChart";
 import "./supplies.scss";
 import Card from "../../components/Card/Card";
-import { products, supplies } from "../../constants";
-import { generateColors } from "../../utils";
-import CustomSelect from "../../components/CustomSelect/CustomSelect";
-import { productColors } from "../Products/productUtility";
-import ProductsTable from "../Products/ProductsTable";
+import { supplies } from "../../constants";
+
 import LineChart from "../../components/LineChart/LineChart";
 import SupplyTable from "./SuppliesTable";
+import { generateColors } from "../../utils";
+import {
+    countries,
+  generateSupplierColors,
+  supplierCountsByCountry,
+  supplierNames,
+} from "./suppliesUtils";
+const supplierData = supplierCountsByCountry();
+const supplierColors = generateSupplierColors(countries.length);
 function Supplies() {
   const countryCounts = supplies.reduce((acc, supply) => {
     acc[supply.Country] = (acc[supply.Country] || 0) + 1;
@@ -21,24 +27,62 @@ function Supplies() {
       {
         label: "Supplier Distribution",
         data: Object.values(countryCounts),
-        backgroundColor: [
-          "rgba(75, 192, 192, 0.5)",
-          "rgba(153, 102, 255, 0.5)",
-          "rgba(255, 159, 64, 0.5)",
-          "rgba(255, 99, 132, 0.5)",
-        ],
+        backgroundColor: generateColors(Object.keys(countryCounts)?.length),
       },
     ],
   };
+  const barChartData = {
+    labels: countries,
+    datasets: [{
+      label: "Number of Suppliers",
+      data: countries.map(country => supplierData[country]),
+      backgroundColor: supplierColors,
+    }],
+  };
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         position: "top",
       },
       title: {
         display: true,
-        text: "Supplier Distribution by Country",
+        text: "No. of Suppliers from different countries",
+      },
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            return `${context.label}: $${context.raw}`;
+          },
+        },
+      },
+    },
+    scales: {
+      x: {
+        title: {
+          display: true,
+          text: "Countries",
+        },
+        grid: {
+          display: false,
+        },
+        // Adjust the spacing and bar width
+        stacked: true,
+        barPercentage: 0.5, // Controls the width of the bars
+        categoryPercentage: 0.8,
+      },
+      y: {
+        title: {
+          display: true,
+          text: "Count",
+        },
+      },
+    },
+    elements: {
+      bar: {
+        barThickness: 30, // Set this value as needed
+        maxBarThickness: 50, // Optional: Set a maximum thickness
       },
     },
   };
@@ -47,7 +91,7 @@ function Supplies() {
       <div className="row">
         <div className="col-md-12 col-12">
           <Card customClass={"customCard"}>
-            <LineChart data={data} title={`Stock Quantity for`} />
+            <BarChart data={barChartData} options={options} />
           </Card>
         </div>
       </div>

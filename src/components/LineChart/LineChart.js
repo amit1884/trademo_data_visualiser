@@ -19,16 +19,13 @@ ChartJS.register(
   PointElement,
   Title,
   Tooltip,
-  Legend,
-  
+  Legend
 );
 
 // Prepare data
 
-
-const LineChart = ({ data, title }) => {
-    
-const options = {
+const LineChart = ({ data, title, option }) => {
+  const options = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
@@ -62,7 +59,7 @@ const options = {
       },
     },
   };
-  return <Line data={data} options={options} />;
+  return <Line data={data} options={option || options} />;
 };
 
 export default LineChart;
