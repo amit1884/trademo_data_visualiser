@@ -1,0 +1,55 @@
+@import "../../scss/variable";
+
+.filterContainer {
+  display: flex;
+  width: 100%;
+  color: #000;
+  font-size: 14px;
+  align-items: center;
+  justify-content: flex-end;
+  .select-field {
+    flex: 1;
+    margin-right: 5px;
+  }
+  .input-field {
+    flex: 1;
+    margin-left: 5px;
+    input{
+        font-size:14px;
+        padding:8px;
+    }
+  }
+  .reset-btn {
+    flex: 1;
+    padding: 8px 30px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    background-color: $BG_LIGHT;
+    color: $WHITE;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 991px) {
+  .filterContainer {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .select-field {
+    width: 100%;
+    margin-right: unset !important;
+    margin: 10px;
+  }
+  .input-field {
+    width: 100%;
+    margin-right: unset !important;
+    margin: 10px;
+  }
+  .reset-btn {
+    margin: 10px auto !important;
+    width: 100%;
+  }
+}

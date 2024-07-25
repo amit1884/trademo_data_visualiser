@@ -43,12 +43,12 @@ function Sidebar() {
           </Link>
         </div>
         <div className="bottom-menu">
-          <div className="menu-item">
+          <Link to="/setting" className="menu-item">
             <div>
               <FaGear />
             </div>
             <div className="menu-label">Settings</div>
-          </div>
+          </Link>
           <div className="user-profile">
             <div className="user-image"></div>
             <div className="user-data">

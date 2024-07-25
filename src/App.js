@@ -8,6 +8,7 @@ import Supplies from "./pages/Supplies/Supplies";
 import NotFound from "./pages/NotFound/NotFound";
 import Shipment from "./pages/Shipment/Shipment";
 import Topbar from "./components/Navbar/Topbar";
+import ComingSoon from "./components/ComingSoon/ComingSoon";
 const App = () => {
   const [productData, setProductData] = useState([]);
   const [supplyData, setSupplyData] = useState([]);
@@ -29,6 +30,7 @@ const App = () => {
             <Route exact path="/" element={<Product />} />
             <Route exact path="/supplies" element={<Supplies />} />
             <Route exact path="/shipment" element={<Shipment />} />
+            <Route exact path="/setting" element={<ComingSoon />} />
             <Route exact path="*" element={<NotFound />} />
           </Routes>
         </div>

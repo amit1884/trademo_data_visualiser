@@ -8,6 +8,7 @@ function CustomSelect({
   isClearable = false,
   isDisabled = false,
   handleChange,
+  placeholder = "",
 }) {
   return (
     <Select
@@ -21,6 +22,8 @@ function CustomSelect({
       name="color"
       options={options}
       onChange={handleChange}
+      placeholder={placeholder}
+      value={defaultValue}
     />
   );
 }

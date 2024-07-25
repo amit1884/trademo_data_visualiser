@@ -1,0 +1,9 @@
+@import "../../scss/variable";
+
+.comingsoonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $WHITE;
+  font-size: 30px;
+}
