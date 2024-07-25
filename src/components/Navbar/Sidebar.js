@@ -6,7 +6,6 @@ import {
   FaProductHunt,
   FaShippingFast,
   FaSupple,
-  FaTruck,
 } from "react-icons/fa";
 import { FaGear } from "react-icons/fa6";
 import { Link } from "react-router-dom";

@@ -1,5 +1,4 @@
 import React from "react";
-import Card from "../Card/Card";
 import { FaBell, FaUser } from "react-icons/fa";
 
 function Topbar() {

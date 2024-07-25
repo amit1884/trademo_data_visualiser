@@ -9,11 +9,7 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
-import { products } from "../../constants";
-import "./barchart.scss";
-import { generateColors } from "../../utils";
 
-// Register Chart.js components
 ChartJS.register(
   CategoryScale,
   LinearScale,

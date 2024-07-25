@@ -1,5 +1,4 @@
 import { supplies } from "../../constants";
-import { generateColors } from "../../utils";
 
 export const countries = [...new Set(supplies.map((supply) => supply.Country))];
 

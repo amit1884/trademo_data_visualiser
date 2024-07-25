@@ -3,8 +3,6 @@ import DoughnutChart from "../../components/DoughnutChart/Doughnut";
 import BarChart from "../../components/BarChart/BarChart";
 import "./products.scss";
 import Card from "../../components/Card/Card";
-import { products } from "../../constants";
-import { generateColors } from "../../utils";
 import CustomSelect from "../../components/CustomSelect/CustomSelect";
 import {
   productColors,

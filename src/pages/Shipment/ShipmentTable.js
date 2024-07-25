@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Card from "../../components/Card/Card";
 import CustomDataTable from "../../components/DataTable/CustomDataTable";
-import { products, shipments, supplies } from "../../constants";
+import { shipments } from "../../constants";
 import Filter from "../../components/Filter/Filter";
 
 function ShipmentTable() {

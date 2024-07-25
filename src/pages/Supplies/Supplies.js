@@ -5,14 +5,12 @@ import "./supplies.scss";
 import Card from "../../components/Card/Card";
 import { supplies } from "../../constants";
 
-import LineChart from "../../components/LineChart/LineChart";
 import SupplyTable from "./SuppliesTable";
 import { generateColors } from "../../utils";
 import {
     countries,
   generateSupplierColors,
   supplierCountsByCountry,
-  supplierNames,
 } from "./suppliesUtils";
 const supplierData = supplierCountsByCountry();
 const supplierColors = generateSupplierColors(countries.length);

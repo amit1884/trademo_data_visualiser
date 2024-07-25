@@ -1,25 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { products, shipments, supplies } from "./constants";
-import "./App.scss";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/Navbar/Sidebar";
 import Product from "./pages/Products/Product";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Supplies from "./pages/Supplies/Supplies";
 import NotFound from "./pages/NotFound/NotFound";
 import Shipment from "./pages/Shipment/Shipment";
 import Topbar from "./components/Navbar/Topbar";
 import ComingSoon from "./components/ComingSoon/ComingSoon";
+import "./App.scss";
+
 const App = () => {
-  const [productData, setProductData] = useState([]);
-  const [supplyData, setSupplyData] = useState([]);
-  const [shipmentData, setShipmentData] = useState([]);
-
-  useEffect(() => {
-    setProductData(products);
-    setSupplyData(supplies);
-    setShipmentData(shipments);
-  }, []);
-
   return (
     <BrowserRouter>
       <div>
